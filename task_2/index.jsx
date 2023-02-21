@@ -13,4 +13,6 @@ const MainComponent = () => {
 // memoized component
 const ChildComponent = memo(({ makeLog }) => (
     <button onClick={makeLog}>say Hi from ChildComponent</button>
-));
+), (prev, next) => {
+    return (prev.makeLog, next.makeLog)
+});

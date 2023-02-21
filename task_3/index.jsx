@@ -15,4 +15,6 @@ const ChildComponent = memo(({ user: { name, age } }) => {
     return (
         <div>user name: {name}, user age: {age}</div>
     )
-});
+}, (prev, next) => {
+    return (prev.user.name === next.user.name && prev.user.age === next.user.age)
+  });
